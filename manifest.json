@@ -1,0 +1,10 @@
+{
+  "name": "Beba água",
+  "short_name": "Beba água",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/"
+}

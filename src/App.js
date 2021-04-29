@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import Layout from "./components/Layout";
+import GlobalStyle from "./GlobalStyle";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import ConfigPage from "./pages/ConfigPage";
+import IndexPage from "./pages/IndexPage";
+import AddWaterPage from "./pages/AddWaterPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <GlobalStyle />
+        <div className="App">
+          <Layout>
+            <Switch>
+              <Route path="/config" component={ConfigPage} />
+              <Route path="/addwater" component={AddWaterPage} />
+              <Route path="/" component={IndexPage} />
+            </Switch>
+          </Layout>
+        </div>
+      </Router>
+    </>
   );
 }
 
